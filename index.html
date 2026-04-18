@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subidha Sanitary Pads – Suryabinayak, Bhaktapur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green: #2e7d32;
+  --green-mid: #388e3c;
+  --green-light: #e8f5e9;
+  --green-bright: #4caf50;
+  --green-dark: #1b5e20;
+  --white: #ffffff;
+  --cream: #f9fdf9;
+  --gray: #f1f8f1;
+  --text: #1a2e1a;
+  --text-light: #4a6b4a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(46,125,50,0.1);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 36px; height: 36px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.nav-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--green); }
+
+.nav-cta {
+  background: var(--green);
+  color: white !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+}
+
+.nav-cta:hover { background: var(--green-dark); color: white !important; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 50%, var(--green-mid) 100%);
+  display: flex;
+  align-items: center;
+  padding: 8rem 5% 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-flowers {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flower {
+  position: absolute;
+  opacity: 0.15;
+  font-size: 2rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.flower:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.flower:nth-child(2) { top: 20%; right: 8%; animation-delay: 1s; font-size: 1.5rem; }
+.flower:nth-child(3) { top: 60%; left: 3%; animation-delay: 2s; font-size: 1rem; }
+.flower:nth-child(4) { bottom: 20%; right: 5%; animation-delay: 0.5s; }
+.flower:nth-child(5) { top: 40%; right: 15%; animation-delay: 1.5s; font-size: 2.5rem; }
+.flower:nth-child(6) { bottom: 30%; left: 10%; animation-delay: 3s; font-size: 1.2rem; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-content { color: white; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: #a5d6a7;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2rem;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-tag {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  color: var(--green-dark);
+  padding: 0.85rem 1.8rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: white;
+  padding: 0.85rem 1.8rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-outline-white:hover { transform: translateY(-2px); background: rgba(255,255,255,0.1); }
+
+.hero-product-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  padding: 2.5rem;
+  color: white;
+  animation: fadeUp 0.9s 0.3s ease both;
+}
+
+.product-main-icon {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.product-tagline {
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.product-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(255,255,255,0.08);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+}
+
+.feature-check {
+  width: 22px; height: 22px;
+  background: var(--green-bright);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.sizes-row {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.size-badge {
+  background: white;
+  color: var(--green-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+}
+
+/* TRUST STRIP */
+.trust-strip {
+  background: var(--green-light);
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--green-dark);
+}
+
+.trust-icon { font-size: 1.2rem; }
+
+/* ABOUT */
+.about {
+  padding: 6rem 5%;
+  background: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.8rem;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: var(--text);
+}
+
+.about p {
+  color: var(--text-light);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.stat-box {
+  background: var(--green-light);
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.stat-box .number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  display: block;
+}
+
+.stat-box .label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.2rem;
+}
+
+.about-image-area {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image-area::before {
+  content: '✿';
+  position: absolute;
+  font-size: 8rem;
+  opacity: 0.08;
+  top: -1rem;
+  right: -1rem;
+}
+
+.about-image-area h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+
+.about-list li::before {
+  content: '✓';
+  width: 20px; height: 20px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* PRODUCTS SECTION */
+.products {
+  padding: 6rem 5%;
+  background: var(--cream);
+  text-align: center;
+}
+
+.products h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 0.8rem;
+}
+
+.products > p {
+  color: var(--text-light);
+  max-width: 480px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+  font-size: 0.98rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: left;
+  border: 1.5px solid transparent;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  border-color: var(--green-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(46,125,50,0.1);
+}
+
+.product-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.product-card p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.product-card .tag {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+  margin-top: 0.8rem;
+}
+
+/* CONTACT */
+.contact {
+  padding: 6rem 5%;
+  background: white;
+}
+
+.contact-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.contact > .contact-inner > div > p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 0.98rem;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-item-icon {
+  width: 44px; height: 44px;
+  background: var(--green-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contact-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0.2rem;
+}
+
+.contact-item a, .contact-item span {
+  font-size: 0.98rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item a:hover { color: var(--green); }
+
+.contact-cta-box {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  border-radius: 24px;
+  padding: 2.5rem;
+  color: white;
+  text-align: center;
+}
+
+.contact-cta-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-cta-box p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  color: var(--green-dark);
+  padding: 0.85rem 1.8rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+  margin-bottom: 0.8rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-green:hover { transform: translateY(-2px); }
+
+.btn-fb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  padding: 0.85rem 1.8rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: background 0.2s;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-fb:hover { background: rgba(255,255,255,0.25); }
+
+/* FOOTER */
+footer {
+  background: var(--green-dark);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 2rem 5%;
+  font-size: 0.85rem;
+}
+
+footer strong { color: white; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content { animation: fadeUp 0.8s ease both; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-grid, .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-product-card { display: none; }
+  .nav-links { display: none; }
+  .trust-strip { gap: 1.5rem; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">✿</div>
+    <span class="nav-logo-text">Subidha</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-flowers">
+    <span class="flower">✿</span>
+    <span class="flower">✾</span>
+    <span class="flower">✿</span>
+    <span class="flower">✾</span>
+    <span class="flower">✿</span>
+    <span class="flower">✾</span>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">✿ Made in Nepal &nbsp;·&nbsp; Bhaktapur</div>
+      <h1>Nepal's <em>trusted</em> sanitary protection</h1>
+      <p class="hero-subtitle">Subidha Sanitary Pads — ultra-thin, hygienic, and made with care for women across Nepal. With Anion Chip technology for extra protection.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Anti-fungal</span>
+        <span class="hero-tag">Anti-bacterial</span>
+        <span class="hero-tag">Anti-viral</span>
+        <span class="hero-tag">With Anion Chip</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="https://wa.me/9779866076055" target="_blank" class="btn-white">💬 WhatsApp Us</a>
+        <a href="tel:9866076055" class="btn-outline-white">📞 Call Us</a>
+      </div>
+    </div>
+    <div class="hero-product-card">
+      <span class="product-main-icon">🌿</span>
+      <div class="product-name">Subidha Pads</div>
+      <div class="product-tagline">With Anion Chip Technology</div>
+      <div class="product-features">
+        <div class="feature-row"><div class="feature-check">✓</div>Ultra-thin with wings</div>
+        <div class="feature-row"><div class="feature-check">✓</div>No.1 Hygienic Protection</div>
+        <div class="feature-row"><div class="feature-check">✓</div>Anti-fungal & anti-bacterial</div>
+        <div class="feature-row"><div class="feature-check">✓</div>8 pads per pack</div>
+        <div class="feature-row"><div class="feature-check">✓</div>Regd. No: 10506/077/078</div>
+      </div>
+      <div class="sizes-row">
+        <span class="size-badge">XL</span>
+        <span class="size-badge">XXL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><span class="trust-icon">🏭</span> Locally manufactured in Bhaktapur</div>
+  <div class="trust-item"><span class="trust-icon">✅</span> Registered product (10506/077/078)</div>
+  <div class="trust-item"><span class="trust-icon">🛡️</span> Anti-fungal, anti-bacterial</div>
+  <div class="trust-item"><span class="trust-icon">🌿</span> Made with care for women</div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-label">Our Story</div>
+      <h2>A local business built for women's health</h2>
+      <p>Subidha Sanitary Udhyog is a home-based manufacturing business located in Suryabinayak-5, Bhaktapur, Nepal. We produce high-quality sanitary pads that are affordable, hygienic, and trusted by families across the region.</p>
+      <p>Our pads feature Anion Chip technology — a modern innovation that provides anti-fungal, anti-bacterial, and anti-viral protection, giving women the confidence and comfort they deserve.</p>
+      <p>By buying Subidha, you support a local Nepali business and help us continue providing affordable hygiene products to women in our community.</p>
+      <div class="about-stats">
+        <div class="stat-box"><span class="number">8</span><span class="label">Pads per pack</span></div>
+        <div class="stat-box"><span class="number">2</span><span class="label">Sizes: XL & XXL</span></div>
+        <div class="stat-box"><span class="number">3yr</span><span class="label">Shelf life</span></div>
+        <div class="stat-box"><span class="number">#1</span><span class="label">Hygienic protection</span></div>
+      </div>
+    </div>
+    <div class="about-image-area">
+      <h3>Why choose Subidha?</h3>
+      <ul class="about-list">
+        <li>Ultra-thin design with wings for secure, comfortable fit</li>
+        <li>Anion Chip technology for advanced hygiene protection</li>
+        <li>Anti-fungal, anti-bacterial, and anti-viral properties</li>
+        <li>Available in XL and XXL sizes for all body types</li>
+        <li>Locally made — supports Nepali entrepreneurs</li>
+        <li>Government registered product you can trust</li>
+        <li>Best before 3 years from manufacturing date</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-label">Our Product</div>
+  <h2>Subidha Sanitary Pads</h2>
+  <p>One product, crafted with care — designed to keep you comfortable, protected, and confident every day.</p>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-card-icon">🌸</div>
+      <h3>Ultra-Thin with Wings</h3>
+      <p>Slim, discreet design with wings for secure placement. You won't even notice you're wearing it.</p>
+      <span class="tag">Comfort</span>
+    </div>
+    <div class="product-card">
+      <div class="product-card-icon">🛡️</div>
+      <h3>Anion Chip Technology</h3>
+      <p>Advanced anion chip provides anti-fungal, anti-bacterial, and anti-viral protection throughout the day.</p>
+      <span class="tag">Protection</span>
+    </div>
+    <div class="product-card">
+      <div class="product-card-icon">📦</div>
+      <h3>XL & XXL Sizes</h3>
+      <p>Available in two sizes to suit all needs. Each pack contains 8 pads with a 3-year shelf life.</p>
+      <span class="tag">XL · XXL</span>
+    </div>
+    <div class="product-card">
+      <div class="product-card-icon">✅</div>
+      <h3>Registered & Trusted</h3>
+      <p>Government registered product (Regd. No: 10506/077/078). Manufactured by Subidha Sanitary Udhyog, Bhaktapur.</p>
+      <span class="tag">Certified</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label">Get in Touch</div>
+      <h2>Order or enquire today</h2>
+      <p>We welcome bulk orders, retail inquiries, and distributor partnerships. Contact us directly to place your order or learn more about our products.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">💬</div>
+          <div>
+            <strong>Phone / WhatsApp</strong>
+            <a href="https://wa.me/9779866076055" target="_blank">9866076055</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <strong>Location</strong>
+            <span>Suryabinayak-5, Bhaktapur, Nepal</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🏭</div>
+          <div>
+            <strong>Manufacturer</strong>
+            <span>Subidha Sanitary Udhyog</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📋</div>
+          <div>
+            <strong>Registration</strong>
+            <span>Regd. No: 10506/077/078</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-cta-box">
+      <h3>Ready to order?</h3>
+      <p>Call us directly or visit our Facebook page to see our latest products, reviews, and updates.</p>
+      <a href="https://wa.me/9779866076055" target="_blank" class="btn-green">💬 WhatsApp 9866076055</a>
+      <a href="tel:9866076055" class="btn-fb">📞 Call 9866076055</a>
+      <a href="https://www.facebook.com/profile.php?id=100077601196784" target="_blank" class="btn-fb">👍 Visit Facebook Page</a>
+    </div>
+  </div>
+</section>
+
+<!-- QR CODES -->
+<section style="padding: 5rem 5%; background: var(--gray); text-align: center;">
+  <div class="section-label">Scan & Connect</div>
+  <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.5vw,2.8rem); margin-bottom:0.8rem;">Connect with us instantly</h2>
+  <p style="color:var(--text-light); max-width:450px; margin:0 auto 3rem; line-height:1.8; font-size:0.98rem;">Scan the QR codes below with your phone to open WhatsApp or our Facebook page directly — no typing needed.</p>
+  <div style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; max-width:700px; margin:0 auto;">
+
+    <div style="background:white; border-radius:20px; padding:2rem; width:240px; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+      <div style="font-size:1.5rem; margin-bottom:0.8rem;">💬</div>
+      <div style="font-weight:600; color:var(--text); margin-bottom:1rem; font-size:0.95rem;">WhatsApp Us</div>
+      <img src="data:image/png;base64,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" style="width:160px;height:160px;border-radius:8px;" alt="WhatsApp QR Code">
+      <div style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-light);">Scan to chat on WhatsApp</div>
+    </div>
+
+    <div style="background:white; border-radius:20px; padding:2rem; width:240px; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+      <div style="font-size:1.5rem; margin-bottom:0.8rem;">👍</div>
+      <div style="font-weight:600; color:var(--text); margin-bottom:1rem; font-size:0.95rem;">Facebook Page</div>
+      <img src="data:image/png;base64,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" style="width:160px;height:160px;border-radius:8px;" alt="Facebook QR Code">
+      <div style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-light);">Scan to visit our page</div>
+    </div>
+
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById("qr-whatsapp"), {
+    text: "https://wa.me/9779866076055",
+    width: 160,
+    height: 160,
+    colorDark: "#1b5e20",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+  new QRCode(document.getElementById("qr-facebook"), {
+    text: "https://www.facebook.com/profile.php?id=100077601196784",
+    width: 160,
+    height: 160,
+    colorDark: "#1b5e20",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Subidha Sanitary Udhyog</strong> · Suryabinayak-5, Bhaktapur, Nepal · Regd. No: 10506/077/078</p>
+  <p style="margin-top:0.5rem;">© 2025 Subidha Sanitary Pad. Made with ❤️ in Nepal.</p>
+</footer>
+
+</body>
+</html>
